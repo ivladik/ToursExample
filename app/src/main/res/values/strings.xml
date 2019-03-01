@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">ToursExample</string>
+
+    <plurals name="possibleFlights">
+        <item quantity="zero">Варианты перелета отсутствуют</item>
+        <item quantity="one">%1$d вариант перелета</item>
+        <item quantity="two">%1$d варианта перелета</item>
+        <item quantity="few">%1$d варианта перелета</item>
+        <item quantity="many">%1$d вариантов перелета</item>
+        <item quantity="other">%1$d вариантов перелета</item>
+    </plurals>
+
+    <plurals name="minimalPrice">
+        <item quantity="zero">0 р</item>
+        <item quantity="one">%1$d р</item>
+        <item quantity="two">от %1$d р</item>
+        <item quantity="few">от %1$d р</item>
+        <item quantity="many">от %1$d р</item>
+        <item quantity="other">от %1$d р</item>
+    </plurals>
+</resources>

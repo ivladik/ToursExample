@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_4"
+        app:cardCornerRadius="@dimen/cardview_default_radius"
+        app:cardElevation="@dimen/cardview_default_elevation">
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_16">
+
+        <TextView
+                android:id="@+id/hotelName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TitleText"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Отель &quot;Пирамида&quot;"/>
+
+        <TextView
+                android:id="@+id/possibleFlights"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/SubtitleText"
+                android:layout_marginTop="@dimen/margin_16"
+                app:layout_constraintLeft_toLeftOf="@id/hotelName"
+                app:layout_constraintTop_toBottomOf="@id/hotelName"
+                tools:text="3 варианта перелета"/>
+
+        <TextView
+                android:id="@+id/minimalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/PriceText"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="от 10000 р"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>
