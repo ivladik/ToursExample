@@ -4,23 +4,28 @@ import android.annotation.SuppressLint
 import android.util.Log
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
+import github.com.ivladik.toursexample.AppDelegate
 import github.com.ivladik.toursexample.R
 import github.com.ivladik.toursexample.model.Flight
 import github.com.ivladik.toursexample.model.Hotel
 import github.com.ivladik.toursexample.model.Tour
 import github.com.ivladik.toursexample.repository.ToursRepository
-import github.com.ivladik.toursexample.utils.resources.ContextResourcesHandler
+import github.com.ivladik.toursexample.utils.resources.ResourcesHandler
 import io.reactivex.Flowable
 import io.reactivex.functions.BiFunction
+import javax.inject.Inject
 
 /**
  * @author Vladislav Falzan.
  */
 @InjectViewState
-class ToursPresenter(
-    private val repository: ToursRepository,
-    private val resourcesHandler: ContextResourcesHandler
-) : MvpPresenter<ToursView>() {
+class ToursPresenter : MvpPresenter<ToursView>() {
+
+    @Inject
+    lateinit var repository: ToursRepository
+
+    @Inject
+    lateinit var resourcesHandler: ResourcesHandler
 
     private val tag = javaClass.simpleName
 
@@ -76,5 +81,9 @@ class ToursPresenter(
             ?.price
             ?: return 0
         return hotel.price + flightWithMinimalPrice
+    }
+
+    init {
+        AppDelegate.appComponent.injectToursPresenter(this)
     }
 }
